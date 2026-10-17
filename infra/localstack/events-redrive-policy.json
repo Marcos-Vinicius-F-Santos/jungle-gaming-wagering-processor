@@ -1,0 +1,3 @@
+{
+  "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:000000000000:wager-events-dlq.fifo\",\"maxReceiveCount\":\"5\"}"
+}

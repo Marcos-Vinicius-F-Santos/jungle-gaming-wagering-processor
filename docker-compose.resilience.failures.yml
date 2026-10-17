@@ -1,0 +1,18 @@
+services:
+  resilience-app-1:
+    environment:
+      SQS_VISIBILITY_TIMEOUT_SECONDS: "2"
+      SQS_INBOX_LEASE_SECONDS: "5"
+      SQS_RETRY_BACKOFF_SECONDS: "2,4,8"
+
+  resilience-app-2:
+    environment:
+      SQS_VISIBILITY_TIMEOUT_SECONDS: "2"
+      SQS_INBOX_LEASE_SECONDS: "5"
+      SQS_RETRY_BACKOFF_SECONDS: "2,4,8"
+
+  resilience-app-3:
+    environment:
+      SQS_VISIBILITY_TIMEOUT_SECONDS: "2"
+      SQS_INBOX_LEASE_SECONDS: "5"
+      SQS_RETRY_BACKOFF_SECONDS: "2,4,8"

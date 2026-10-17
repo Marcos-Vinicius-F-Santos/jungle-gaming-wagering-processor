@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "runId": "manual-load-validation",
+  "generatedAt": "2026-10-17T15:18:41.067Z",
+  "status": "passed",
+  "config": {
+    "scenario": "all",
+    "warmupSeconds": 1,
+    "durationSeconds": 1,
+    "drainTimeoutSeconds": 60,
+    "concurrency": 3,
+    "runId": "manual-load-validation",
+    "reportDir": "E:\\Projects\\jungleGaming\\artifacts\\load",
+    "keepEnvironment": true
+  },
+  "environment": {
+    "applicationVersion": "0.1.0",
+    "nodeVersion": "v26.3.0",
+    "bunVersion": "1.4.3",
+    "composeProject": "jungle-gaming-load",
+    "database": "postgresql://wagering:wagering@127.0.0.1:26432/wagering",
+    "broker": "http://127.0.0.1:26566",
+    "instances": 3
+  },
+  "scenarios": [
+    {
+      "scenarioId": "distributed-throughput",
+      "status": "passed",
+      "startedAt": "2026-10-17T15:18:31.948Z",
+      "endedAt": "2026-10-17T15:18:34.355Z",
+      "warmupSeconds": 1,
+      "durationSeconds": 1,
+      "drainDurationMs": 273,
+      "counters": {
+        "sent": 4,
+        "accepted": 4,
+        "processed": 4,
+        "rejected": 0,
+        "pending": 0,
+        "failed": 0,
+        "retries": 0,
+        "redeliveries": 0,
+        "replays": 0,
+        "lockConflicts": 0,
+        "recoveredLeases": 0,
+        "deadLettered": 0
+      },
+      "latency": {
+        "sqs_send_latency_ms": {
+          "count": 4,
+          "unit": "milliseconds",
+          "min": 3.4559999999999036,
+          "max": 4.991200000000163,
+          "p50": 3.469400000000178,
+          "p95": 4.991200000000163,
+          "p99": 4.991200000000163
+        }
+      },
+      "errors": {},
+      "gauges": {
+        "processed_per_second": 4
+      },
+      "invariants": {
+        "passed": true,
+        "walletsChecked": 3,
+        "balanceLedgerMismatches": 0,
+        "duplicateFinancialEffects": 0,
+        "negativeBalances": 0,
+        "inboxConflicts": 0,
+        "outboxFinancialDuplicates": 0,
+        "unexpectedDeadLetters": 0,
+        "queueDrained": true,
+        "details": []
+      },
+      "limitations": [
+        "Contadores de processamento são inferidos a partir da drenagem e serão refinados na matriz completa."
+      ]
+    },
+    {
+      "scenarioId": "hot-wallet",
+      "status": "passed",
+      "startedAt": "2026-10-17T15:18:34.356Z",
+      "endedAt": "2026-10-17T15:18:36.414Z",
+      "warmupSeconds": 1,
+      "durationSeconds": 1,
+      "drainDurationMs": 14,
+      "counters": {
+        "sent": 9,
+        "accepted": 9,
+        "processed": 9,
+        "rejected": 0,
+        "pending": 0,
+        "failed": 0,
+        "retries": 0,
+        "redeliveries": 0,
+        "replays": 0,
+        "lockConflicts": 0,
+        "recoveredLeases": 0,
+        "deadLettered": 0
+      },
+      "latency": {
+        "sqs_send_latency_ms": {
+          "count": 9,
+          "unit": "milliseconds",
+          "min": 2.9031000000004497,
+          "max": 3.532799999999952,
+          "p50": 3.2140999999996893,
+          "p95": 3.532799999999952,
+          "p99": 3.532799999999952
+        }
+      },
+      "errors": {},
+      "gauges": {
+        "processed_per_second": 9
+      },
+      "invariants": {
+        "passed": true,
+        "walletsChecked": 1,
+        "balanceLedgerMismatches": 0,
+        "duplicateFinancialEffects": 0,
+        "negativeBalances": 0,
+        "inboxConflicts": 0,
+        "outboxFinancialDuplicates": 0,
+        "unexpectedDeadLetters": 0,
+        "queueDrained": true,
+        "details": []
+      },
+      "limitations": [
+        "Contadores de processamento são inferidos a partir da drenagem e serão refinados na matriz completa."
+      ]
+    },
+    {
+      "scenarioId": "replay-redelivery",
+      "status": "passed",
+      "startedAt": "2026-10-17T15:18:36.415Z",
+      "endedAt": "2026-10-17T15:18:38.724Z",
+      "warmupSeconds": 1,
+      "durationSeconds": 1,
+      "drainDurationMs": 268,
+      "counters": {
+        "sent": 7,
+        "accepted": 7,
+        "processed": 7,
+        "rejected": 0,
+        "pending": 0,
+        "failed": 0,
+        "retries": 0,
+        "redeliveries": 0,
+        "replays": 7,
+        "lockConflicts": 0,
+        "recoveredLeases": 0,
+        "deadLettered": 0
+      },
+      "latency": {
+        "sqs_send_latency_ms": {
+          "count": 7,
+          "unit": "milliseconds",
+          "min": 2.952900000000227,
+          "max": 4.627300000000105,
+          "p50": 3.2534999999998035,
+          "p95": 4.627300000000105,
+          "p99": 4.627300000000105
+        }
+      },
+      "errors": {},
+      "gauges": {
+        "processed_per_second": 7
+      },
+      "invariants": {
+        "passed": true,
+        "walletsChecked": 1,
+        "balanceLedgerMismatches": 0,
+        "duplicateFinancialEffects": 0,
+        "negativeBalances": 0,
+        "inboxConflicts": 0,
+        "outboxFinancialDuplicates": 0,
+        "unexpectedDeadLetters": 0,
+        "queueDrained": true,
+        "details": []
+      },
+      "limitations": [
+        "Contadores de processamento são inferidos a partir da drenagem e serão refinados na matriz completa."
+      ]
+    },
+    {
+      "scenarioId": "outbox-pressure",
+      "status": "passed",
+      "startedAt": "2026-10-17T15:18:38.725Z",
+      "endedAt": "2026-10-17T15:18:41.066Z",
+      "warmupSeconds": 1,
+      "durationSeconds": 1,
+      "drainDurationMs": 267,
+      "counters": {
+        "sent": 7,
+        "accepted": 7,
+        "processed": 7,
+        "rejected": 0,
+        "pending": 0,
+        "failed": 0,
+        "retries": 0,
+        "redeliveries": 0,
+        "replays": 0,
+        "lockConflicts": 0,
+        "recoveredLeases": 0,
+        "deadLettered": 0
+      },
+      "latency": {
+        "sqs_send_latency_ms": {
+          "count": 7,
+          "unit": "milliseconds",
+          "min": 2.3136999999996988,
+          "max": 3.292199999999866,
+          "p50": 3.119199999999182,
+          "p95": 3.292199999999866,
+          "p99": 3.292199999999866
+        }
+      },
+      "errors": {},
+      "gauges": {
+        "processed_per_second": 7
+      },
+      "invariants": {
+        "passed": true,
+        "walletsChecked": 3,
+        "balanceLedgerMismatches": 0,
+        "duplicateFinancialEffects": 0,
+        "negativeBalances": 0,
+        "inboxConflicts": 0,
+        "outboxFinancialDuplicates": 0,
+        "unexpectedDeadLetters": 0,
+        "queueDrained": true,
+        "details": []
+      },
+      "limitations": [
+        "Contadores de processamento são inferidos a partir da drenagem e serão refinados na matriz completa."
+      ]
+    }
+  ],
+  "limitations": [
+    "A execução mede o caminho SQS/Inbox/Outbox; latência HTTP não é coletada por estes cenários.",
+    "CPU e memória do host não são coletadas automaticamente nesta primeira versão do runner.",
+    "A taxa observada depende dos limites locais de PostgreSQL, LocalStack, Docker e do host."
+  ]
+}

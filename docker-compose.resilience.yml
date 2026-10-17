@@ -1,0 +1,124 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: wagering
+      POSTGRES_USER: wagering
+      POSTGRES_PASSWORD: wagering
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wagering -d wagering"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "${RESILIENCE_POSTGRES_PORT:-15432}:5432"
+    volumes:
+      - resilience_postgres_data:/var/lib/postgresql/data
+
+  localstack:
+    image: localstack/localstack:3.8.1
+    environment:
+      SERVICES: sqs
+      AWS_DEFAULT_REGION: us-east-1
+      DEBUG: 0
+    healthcheck:
+      test: ["CMD", "awslocal", "sqs", "list-queues"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "${RESILIENCE_SQS_PORT:-14566}:4566"
+    volumes:
+      - "./infra/localstack:/etc/localstack/init/ready.d"
+      - resilience_localstack_data:/var/lib/localstack
+
+  migrations:
+    build:
+      context: .
+      dockerfile: Dockerfile.resilience
+    environment:
+      DATABASE_URL: postgresql://wagering:wagering@postgres:5432/wagering
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["bunx", "mikro-orm", "migration:up", "--config", "./dist/infrastructure/database/mikro-orm.migrations.config.js"]
+
+  resilience-app-1:
+    build:
+      context: .
+      dockerfile: Dockerfile.resilience
+    environment: &resilience-app-environment
+      NODE_ENV: test
+      PORT: 3000
+      DATABASE_URL: postgresql://wagering:wagering@postgres:5432/wagering
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      SQS_ENABLED: "true"
+      SQS_ENDPOINT: http://localstack:4566
+      SQS_QUEUE_URL: http://localstack:4566/000000000000/wager-transactions.fifo
+      SQS_DLQ_URL: http://localstack:4566/000000000000/wager-transactions-dlq.fifo
+      SQS_INSTANCE_ID: resilience-app-1
+      SQS_CONSUMER_NAME: wager-transaction-consumer-v1
+      SQS_MAX_NUMBER_OF_MESSAGES: "1"
+      SQS_WAIT_TIME_SECONDS: "1"
+      OUTBOX_ENABLED: "true"
+      OUTBOX_EVENTS_QUEUE_URL: http://localstack:4566/000000000000/wager-events.fifo
+      OUTBOX_EVENTS_DLQ_URL: http://localstack:4566/000000000000/wager-events-dlq.fifo
+      SQS_TEST_FAULT_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://localhost:3000/health/live').then((r) => { if (!r.ok) process.exit(1) })"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  resilience-app-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.resilience
+    environment:
+      <<: *resilience-app-environment
+      SQS_INSTANCE_ID: resilience-app-2
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://localhost:3000/health/live').then((r) => { if (!r.ok) process.exit(1) })"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  resilience-app-3:
+    build:
+      context: .
+      dockerfile: Dockerfile.resilience
+    environment:
+      <<: *resilience-app-environment
+      SQS_INSTANCE_ID: resilience-app-3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://localhost:3000/health/live').then((r) => { if (!r.ok) process.exit(1) })"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  resilience_postgres_data:
+  resilience_localstack_data:

@@ -1,0 +1,16 @@
+services:
+  resilience-app-1:
+    environment:
+      SQS_TEST_FAULT_ENABLED: "true"
+      SQS_TEST_FAULT_POINT: BEFORE_COMMIT
+      SQS_TEST_FAULT_ACTION: KILL
+      SQS_VISIBILITY_TIMEOUT_SECONDS: "2"
+      SQS_INBOX_LEASE_SECONDS: "5"
+
+  resilience-app-2:
+    environment:
+      SQS_ENABLED: "false"
+
+  resilience-app-3:
+    environment:
+      SQS_ENABLED: "false"
