@@ -9,7 +9,7 @@ Este roteiro foi feito para validar o projeto localmente do começo ao fim. Ele 
 - Docker Desktop em execução;
 - portas 3000, 5432 e 4566 livres.
 
-Na raiz E:\Projects\jungleGaming:
+Na raiz do projeto:
 
 ~~~powershell
 bun install --frozen-lockfile

@@ -1,6 +1,6 @@
 # Spec da Feature — Criar e consultar Wallet com saldo inicial
 
-Status: Concluída e aprovada por Marcos em 2026-10-15
+Status: Concluída e aprovada em 2026-10-15
 Projeto: Distributed Wagering Processor
 Onde vive no código: `src/modules/wallets/` e adapters HTTP/persistência correspondentes
 Spec do produto: [`../../01-produto/spec.md`](../../01-produto/spec.md)

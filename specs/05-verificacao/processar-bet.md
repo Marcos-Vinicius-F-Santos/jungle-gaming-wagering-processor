@@ -1,6 +1,6 @@
 # Verificação Operacional — Processar BET
 
-Status: Verificação executada — aguardando revisão e aprovação de Marcos.
+Status: Verificação executada — aguardando revisão e aprovação.
 
 ## Pré-requisitos
 
@@ -11,7 +11,7 @@ Status: Verificação executada — aguardando revisão e aprovação de Marcos.
 
 ## Comandos executados
 
-Na raiz `E:\Projects\jungleGaming`:
+Na raiz do projeto:
 
 ```bash
 bun run migration:down

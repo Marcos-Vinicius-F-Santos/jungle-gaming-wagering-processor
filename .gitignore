@@ -6,4 +6,5 @@ coverage/
 !.env.example
 .DS_Store
 *.log
+.snapshot-*.json
 

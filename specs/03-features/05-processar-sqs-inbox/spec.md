@@ -331,7 +331,7 @@ Dado que uma mesma operação seja submetida por HTTP e por SQS com chaves de ne
 - [x] **Diagnóstico do Inbox:** adicionar `attempts`, `last_error_code`, `last_error_at` e `processed_at`. `processed_at` representa o instante do commit bem-sucedido. O payload financeiro completo não será armazenado; `payload_hash` e códigos estruturados serão usados para investigação.
 - [x] **Estado do Inbox:** usar os estados `PROCESSING`, `PROCESSED`, `FAILED_RETRYABLE` e `FAILED_PERMANENT`, com atualização atômica e retenção configurável.
 
-As quatro decisões acima foram aprovadas por Marcos e passam a orientar o plano, as migrations e a implementação desta feature.
+As quatro decisões acima foram aprovadas e passam a orientar o plano, as migrations e a implementação desta feature.
 
 As perguntas abertas não devem ser decididas silenciosamente durante a implementação. Se alguma resposta alterar o contrato de mensageria ou o schema persistente, deve ser registrada antes do plano e das tarefas.
 

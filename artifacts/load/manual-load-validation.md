@@ -3,8 +3,8 @@
 - Status: passed
 - Generated at: 2026-10-17T15:18:41.067Z
 - Instances: 3
-- Database: postgresql://wagering:wagering@127.0.0.1:26432/wagering
-- Broker: http://127.0.0.1:26566
+- Database: local PostgreSQL (credentials omitted)
+- Broker: local LocalStack/SQS endpoint
 
 ## Scenarios
 

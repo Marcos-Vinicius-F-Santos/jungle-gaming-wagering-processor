@@ -273,10 +273,10 @@ Dado um saldo e duas reversões válidas concorrentes sobre a mesma wallet, quan
 - [x] Referências ausentes usarão `PENDING_REFERENCE`, backoff aprovado e TTL total de 15 minutos.
 - [x] O fluxo continuará HTTP síncrono, com `201`, `200`, `202`, `400`, `404`, `409`, `422` e `503` conforme o contrato existente.
 - [x] Money, `NUMERIC(19,2)`, moeda ISO normalizada, UUID v7, optimistic locking com três tentativas, ledger imutável e Outbox transacional seguem as decisões globais aprovadas.
-- [x] Uma referência só pode receber uma reversão direta, independentemente de ser `REFUND` ou `ROLLBACK`; a decisão foi aprovada por Marcos. Isso impede dupla compensação da mesma operação. Um `ROLLBACK` de um `REFUND` continua permitido porque referencia a transação `REFUND`, e não diretamente a operação original.
+- [x] Uma referência só pode receber uma reversão direta, independentemente de ser `REFUND` ou `ROLLBACK`; essa decisão impede dupla compensação da mesma operação. Um `ROLLBACK` de um `REFUND` continua permitido porque referencia a transação `REFUND`, e não diretamente a operação original.
 - [x] `ROLLBACK` de `REFUND` é permitido como inversão integral da própria reversão, porque o README lista explicitamente `REFUND` entre as referências possíveis de `ROLLBACK`; portanto gera a direção inversa da referência, sem reversão parcial.
 
-As perguntas abertas foram registradas e respondidas com fundamento no README e na aprovação explícita de Marcos. A criação do plano, tarefas e qualquer implementação ainda deve aguardar a revisão e aprovação formal desta Spec.
+As perguntas abertas foram registradas e respondidas com fundamento no README e em decisões técnicas explícitas. A criação do plano, tarefas e qualquer implementação ainda deve aguardar a revisão e aprovação formal desta Spec.
 
 ## 10. Definition of Done desta feature
 

@@ -1,6 +1,6 @@
 # Checklist de Convergência — Criar e consultar Wallet
 
-Status: Concluído e aprovado por Marcos em 2026-10-15.
+Status: Concluído e aprovado em 2026-10-15.
 
 Documentos comparados:
 

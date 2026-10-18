@@ -2,7 +2,7 @@
 
 Spec relacionada: [`../../03-features/03-processar-win-loss/spec.md`](../../03-features/03-processar-win-loss/spec.md)
 Arquitetura relacionada: [`../../02-arquitetura/arquitetura.md`](../../02-arquitetura/arquitetura.md)
-Status: Implementação verificada e aprovada por Marcos em 2026-10-16; deploy permanece fora desta rodada
+Status: Implementação verificada e aprovada em 2026-10-16; deploy permanece fora desta rodada
 
 Escopo desta rodada: fases 1 a 5. A fase 06 de deploy não existe por enquanto, pois o projeto não possui Git nem fluxo de deploy configurado.
 
@@ -93,7 +93,7 @@ O rollback deve remover somente os campos, checks e índices criados por esta mi
 1. Executar typecheck, build e suíte completa.
 2. Executar ciclo `migration:down/up` e registrar evidências.
 3. Preencher checklist Spec ↔ Plano ↔ Código ↔ Testes, incluindo os quatro eventos exigidos e sua atomicidade.
-4. Submeter para revisão e aprovação de Marcos.
+4. Submeter para revisão e aprovação.
 
 Não haverá deploy nesta rodada por ausência de Git e de fluxo de deploy configurado.
 
@@ -120,4 +120,4 @@ Não haverá deploy nesta rodada por ausência de Git e de fluxo de deploy confi
 - A publicação externa por SQS, Inbox, DLQ e redelivery permanece fora desta rodada.
 - O worker de referências pendentes usará os campos persistidos de agenda, tentativas e `pending_since`; não haverá scheduler apenas em memória.
 
-As demais decisões funcionais da Spec foram respondidas e registradas. A implementação foi verificada e aprovada por Marcos em 2026-10-16; não há deploy nesta rodada.
+As demais decisões funcionais da Spec foram respondidas e registradas. A implementação foi verificada e aprovada em 2026-10-16; não há deploy nesta rodada.

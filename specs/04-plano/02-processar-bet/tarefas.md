@@ -102,7 +102,7 @@ Cada tarefa é pequena o suficiente para revisão isolada, referencia os requisi
 
 - [ ] **T-021 [FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-009, FR-010]** Executar convergência, documentar rollback e submeter para aprovação
   - Arquivos/módulos: `specs/03-features/02-processar-bet/spec.md`, `specs/04-plano/02-processar-bet/`, checklist/evidências de verificação e diff da implementação
-  - Verificação: preencher checklist Spec ↔ Plano ↔ Código ↔ Testes, anexar evidências de `up/down`, testes concorrentes e regressão; Marcos revisa e aprova antes de marcar a feature como concluída. Não há deploy nesta rodada.
+  - Verificação: preencher checklist Spec ↔ Plano ↔ Código ↔ Testes, anexar evidências de `up/down`, testes concorrentes e regressão; o revisor técnico aprova antes de marcar a feature como concluída. Não há deploy nesta rodada.
 
 ## Adiado (fora do escopo desta rodada)
 

@@ -2,7 +2,7 @@
 
 Spec relacionada: [`specs/03-features/01-criar-consultar-wallet/spec.md`](../../03-features/01-criar-consultar-wallet/spec.md)
 Arquitetura relacionada: [`specs/02-arquitetura/arquitetura.md`](../../02-arquitetura/arquitetura.md)
-Status: Concluído e aprovado por Marcos em 2026-10-15
+Status: Concluído e aprovado em 2026-10-15
 
 Escopo desta rodada: fases 1 a 5. A fase 06 de deploy não existe por enquanto, pois o projeto não possui Git nem fluxo de deploy configurado.
 
@@ -134,7 +134,7 @@ O rollback deve remover as tabelas e os objetos criados pela migration na ordem 
 2. Comparar Spec ↔ Plano/Tarefas ↔ Código ↔ Testes.
 3. Registrar divergências, se houver.
 4. Confirmar rollback da migration e procedimento de recuperação.
-5. Submeter para revisão e aprovação de Marcos; não marcar a feature como concluída sozinho.
+5. Submeter para revisão e aprovação; não marcar a feature como concluída sozinho.
 
 ## 6. Riscos
 
@@ -158,7 +158,7 @@ Não há perguntas abertas para iniciar esta feature. Foram adotados os seguinte
 - **Ambiente local:** Docker Compose é o padrão único para PostgreSQL e serviços locais. O comando padrão é `docker compose up -d` na raiz do projeto; para parar, usar `docker compose down`.
 - **Branches:** usar `main` como branch base e uma branch de feature, inicialmente `feature/criar-consultar-wallet`. Não trabalhar diretamente em `main`.
 - **Trilha de commits:** implementar uma tarefa por vez, na ordem de `tarefas.md`, com commits pequenos e rastreáveis, como `feat(wallets): ...`, `test(wallets): ...` e `docs(wallets): ...`.
-- **Integração:** somente integrar em `main` depois da revisão e aprovação de Marcos.
+- **Integração:** somente integrar em `main` depois da revisão e aprovação.
 - **Ledger:** manter lançamentos imutáveis, sem update/delete e sem expurgo automático nesta fase. O ledger permanece retido como fonte de auditoria financeira.
 - **Proteção do ledger:** usar a combinação de privilégios restritos e/ou trigger definida na migration para impedir alterações e exclusões.
 

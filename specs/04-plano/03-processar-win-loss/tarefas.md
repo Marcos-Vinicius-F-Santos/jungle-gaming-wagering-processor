@@ -99,7 +99,7 @@ Cada tarefa é pequena o suficiente para revisão individual, referencia os requ
 
 - [ ] **T-021 [FR-001, FR-002, FR-003, FR-004, FR-005, FR-006, FR-007, FR-008, FR-009, FR-010]** Executar convergência e submeter para aprovação
   - Arquivos/módulos: `specs/03-features/03-processar-win-loss/`, `specs/04-plano/03-processar-win-loss/`, checklist/evidências
-  - Verificação: typecheck, build, suíte completa, migration `up/down`, concorrência, rollback e comparação Spec ↔ Plano ↔ Código ↔ Testes; não marcar como concluído sem aprovação de Marcos.
+  - Verificação: typecheck, build, suíte completa, migration `up/down`, concorrência, rollback e comparação Spec ↔ Plano ↔ Código ↔ Testes; não marcar como concluído sem aprovação.
 
 ## Adiado (fora do escopo desta rodada)
 

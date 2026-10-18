@@ -1,6 +1,6 @@
 # Spec da Feature — Processar referências fora de ordem
 
-Status: Aprovada por Marcos em 2026-10-16  
+Status: Aprovada em 2026-10-16
 Projeto: Distributed Wagering Processor  
 Onde vive no código: `src/modules/wagering/`, worker de referências pendentes, persistência de `WagerTransaction` e Outbox  
 Spec do produto: [`../../01-produto/spec.md`](../../01-produto/spec.md)  
@@ -326,7 +326,7 @@ Dado que uma operação normal seja recebida por HTTP ou SQS, quando não houver
 - [x] **Operação do worker:** manter lote padrão de 50 e polling configurável de 1 segundo, com métricas de duração e quantidade de registros vencidos. O polling será apenas um mecanismo de despertar; a fonte da verdade continuará sendo a agenda persistida.
 - [x] **Falha de reprocessamento:** manter a operação em `PENDING_REFERENCE` quando a falha for transitória de infraestrutura/lock e deixar a próxima agenda disponível; falha de regra será terminal e auditável.
 
-As decisões acima foram aprovadas por Marcos e passam a orientar o plano, as tarefas e a implementação desta feature.
+As decisões acima foram aprovadas e passam a orientar o plano, as tarefas e a implementação desta feature.
 
 ## 10. Definition of Done desta feature
 

@@ -1,6 +1,6 @@
 # Verificação Operacional — Criar e consultar Wallet
 
-Status: Concluído e aprovado por Marcos em 2026-10-15.
+Status: Concluído e aprovado em 2026-10-15.
 
 Nota de escopo: a fase 06 de deploy não existe por enquanto. Este documento cobre somente verificação local, migration e rollback de banco; deploy de ambiente será definido futuramente.
 

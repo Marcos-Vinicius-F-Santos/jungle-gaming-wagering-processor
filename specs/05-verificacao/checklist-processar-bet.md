@@ -1,6 +1,6 @@
 # Checklist de Convergência — Processar BET
 
-Status: Verificação executada — aguardando revisão e aprovação de Marcos.
+Status: Verificação executada — aguardando revisão e aprovação.
 
 Esta verificação cobre T-001 a T-021 da feature de processamento síncrono de `BET`. A fase 06 de deploy não faz parte desta rodada, conforme decisão aprovada.
 
@@ -59,4 +59,4 @@ Esta verificação cobre T-001 a T-021 da feature de processamento síncrono de 
 
 ## Portão de aprovação
 
-O checklist está preenchido e a verificação técnica foi executada. A feature permanece aguardando a revisão e aprovação de Marcos; este documento não marca tarefas nem a feature como concluídas automaticamente.
+O checklist está preenchido e a verificação técnica foi executada. A feature permanece aguardando revisão e aprovação; este documento não marca tarefas nem a feature como concluídas automaticamente.

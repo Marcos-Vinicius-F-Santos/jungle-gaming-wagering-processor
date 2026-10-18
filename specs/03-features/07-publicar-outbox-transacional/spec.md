@@ -1,6 +1,6 @@
 # Spec da Feature — Publicar eventos da Transactional Outbox
 
-Status: Aprovada por Marcos em 2026-10-16  
+Status: Aprovada em 2026-10-16
 Projeto: Distributed Wagering Processor  
 Onde vive no código: `src/modules/messaging/outbox/`, publisher SQS e worker de Outbox  
 Spec do produto: [`../../01-produto/spec.md`](../../01-produto/spec.md)  

@@ -2,7 +2,7 @@
 
 Plano relacionado: [`specs/04-plano/01-criar-consultar-wallet/plano.md`](./plano.md)
 Spec relacionada: [`specs/03-features/01-criar-consultar-wallet/spec.md`](../../03-features/01-criar-consultar-wallet/spec.md)
-Status: Concluído e aprovado por Marcos em 2026-10-15
+Status: Concluído e aprovado em 2026-10-15
 
 Escopo aprovado desta rodada: execução e verificação das fases 1 a 5. A fase 06 de deploy não existe por enquanto, pois o projeto não possui Git nem fluxo de deploy configurado; ela será definida em uma rodada futura.
 
@@ -102,7 +102,7 @@ Cada tarefa é pequena o suficiente para revisão isolada, referencia os requisi
 
 - [x] **T-021 [FR-001, FR-005]** Submeter a feature para revisão e aprovação
   - Arquivos/módulos: diff final da feature
-  - Verificação: Marcos revisa e aprova; a tarefa não é marcada como concluída pela IA sozinha.
+  - Verificação: o revisor técnico revisa e aprova; a tarefa não é marcada como concluída automaticamente.
 
 ## Adiado (fora do escopo desta rodada)
 

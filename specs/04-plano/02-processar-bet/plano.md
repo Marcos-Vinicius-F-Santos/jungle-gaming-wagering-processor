@@ -106,7 +106,7 @@ O `down` deve remover primeiro os índices/constraints/colunas adicionados e rec
 1. Atualizar as evidências da feature e preencher a verificação de convergência.
 2. Confirmar migration `up/down` e o procedimento local de recuperação.
 3. Revisar Spec ↔ Plano/Tarefas ↔ Código ↔ Testes.
-4. Submeter para revisão e aprovação de Marcos; não marcar como concluído sem essa aprovação.
+4. Submeter para revisão e aprovação; não marcar como concluído sem essa aprovação.
 
 Não haverá deploy nesta rodada por ausência de Git e de fluxo de deploy configurado.
 

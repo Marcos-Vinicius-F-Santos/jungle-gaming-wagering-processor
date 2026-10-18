@@ -10,7 +10,7 @@
     "drainTimeoutSeconds": 60,
     "concurrency": 3,
     "runId": "manual-load-validation",
-    "reportDir": "E:\\Projects\\jungleGaming\\artifacts\\load",
+    "reportDir": "artifacts/load",
     "keepEnvironment": true
   },
   "environment": {
@@ -18,8 +18,8 @@
     "nodeVersion": "v26.3.0",
     "bunVersion": "1.4.3",
     "composeProject": "jungle-gaming-load",
-    "database": "postgresql://wagering:wagering@127.0.0.1:26432/wagering",
-    "broker": "http://127.0.0.1:26566",
+    "database": "local PostgreSQL (credentials omitted)",
+    "broker": "local LocalStack/SQS endpoint",
     "instances": 3
   },
   "scenarios": [

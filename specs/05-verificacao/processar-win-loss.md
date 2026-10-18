@@ -1,6 +1,6 @@
 # Verificação Operacional — Processar WIN e LOSS
 
-Status: Implementação verificada tecnicamente e aprovada por Marcos em 2026-10-16.
+Status: Implementação verificada tecnicamente e aprovada em 2026-10-16.
 
 ## Documentos comparados
 
@@ -105,7 +105,7 @@ Na execução anterior, o erro comum da suíte de integração foi `EACCES` ao c
 
 ## Aprovação
 
-Marcos aprovou explicitamente a implementação da feature Processar WIN e LOSS em 2026-10-16, após a verificação técnica registrada acima. Essa aprovação não altera os resultados dos testes nem cria evidência adicional.
+A implementação da feature Processar WIN e LOSS foi aprovada em 2026-10-16, após a verificação técnica registrada acima. Essa aprovação não altera os resultados dos testes nem cria evidência adicional.
 
 ## Divergências registradas
 
